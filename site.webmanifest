@@ -1,0 +1,10 @@
+{
+  "name": "Savon.by — мыло ручной работы",
+  "short_name": "Savon.by",
+  "lang": "ru",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F6F7F3",
+  "theme_color": "#2F4A3A",
+  "icons": [{ "src": "/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }]
+}
