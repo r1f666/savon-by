@@ -8,7 +8,6 @@
   // Фильтр каталога
   var chips = document.querySelector('.chips');
   if (chips) {
-    chips.hidden = false;
     var cards = document.querySelectorAll('.card');
     chips.addEventListener('click', function (e) {
       var b = e.target.closest('.chip');

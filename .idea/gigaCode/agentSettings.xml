@@ -6,6 +6,25 @@
         <Execute>
           <option name="pattern" value="md E:\STILANABEL\PRJ\SAVON-BY\images" />
         </Execute>
+        <Execute>
+          <option name="pattern" value="cmd /c mkdir &quot;E:\STILANABEL\PRJ\SAVON-BY\blog&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="powershell -Command &quot;New-Item -ItemType Directory -Path 'E:\STILANABEL\PRJ\SAVON-BY\blog' -Force&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="cmd /c dir /s /b E:\STILANABEL\PRJ\SAVON-BY\*.html E:\STILANABEL\PRJ\SAVON-BY\*.css E:\STILANABEL\PRJ\SAVON-BY\*.js E:\STILANABEL\PRJ\SAVON-BY\*.xml E:\STILANABEL\PRJ\SAVON-BY\*.txt E:\STILANABEL\PRJ\SAVON-BY\*.svg E:\STILANABEL\PRJ\SAVON-BY\*.toml 2&gt;nul" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="cmd /c del E:\STILANABEL\PRJ\SAVON-BY\style.css E:\STILANABEL\PRJ\SAVON-BY\script.js" />
+        </Execute>
+      </list>
+    </option>
+    <option name="autoApprovedReads">
+      <list>
+        <Read>
+          <option name="pattern" value="$PROJECT_DIR$/../for StilanaBel.by/*" />
+        </Read>
       </list>
     </option>
   </component>

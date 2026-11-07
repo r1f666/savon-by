@@ -2,17 +2,58 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Страница не найдена | Savon.by</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Страница не найдена — Savon.by</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#2F4A3A">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Philosopher:wght@400;700&display=swap">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <main class="wrap" style="padding:96px 0;min-height:70vh">
-    <h1>Такой страницы нет</h1>
-    <p class="lead">Вернитесь на главную и выберите мыло в каталоге.</p>
-    <div class="actions"><a class="btn btn--primary" href="/">На главную</a></div>
+  <a class="skip" href="#main">К содержимому</a>
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="logo" href="/" aria-label="Savon.by — на главную">
+        <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="2" y="9" width="28" height="16" rx="6" fill="#A58FCB"/><rect x="5" y="11" width="22" height="5" rx="3" fill="#fff" opacity=".3"/></svg>
+        <span>Savon.by</span>
+      </a>
+      <nav class="nav" aria-label="Разделы">
+        <a href="/catalog.html">Каталог</a>
+        <a href="/blog/">Блог</a>
+        <a href="/#contacts">Контакты</a>
+      </nav>
+      <a class="btn btn--small" href="https://t.me/your_nickname" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" style="text-align:center;padding:100px 0;">
+      <div class="wrap">
+        <h1 style="font-size:clamp(4rem,12vw,8rem);color:var(--sage);line-height:1;margin-bottom:16px;">404</h1>
+        <h2 style="margin-bottom:16px;">Страница не найдена</h2>
+        <p class="sub" style="max-width:32em;margin:0 auto 32px;">Кажется, вы забрели не туда. Натуральное мыло ждёт вас в каталоге!</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+          <a class="btn btn--primary" href="/">На главную</a>
+          <a class="btn btn--ghost" href="/catalog.html">Смотреть каталог</a>
+          <a class="btn btn--ghost" href="/blog/">Читать блог</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="foot">
+    <div class="wrap"><p>© <span id="year">2026</span> Savon.by — мыло ручной работы. Все права защищены.</p></div>
+  </footer>
+
+  <nav class="dock" aria-label="Быстрая связь">
+    <a href="https://t.me/your_nickname" target="_blank" rel="noopener">Telegram</a>
+    <a href="https://instagram.com/your_nickname" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>
