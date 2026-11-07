@@ -18,6 +18,12 @@
         <Execute>
           <option name="pattern" value="cmd /c del E:\STILANABEL\PRJ\SAVON-BY\style.css E:\STILANABEL\PRJ\SAVON-BY\script.js" />
         </Execute>
+        <Execute>
+          <option name="pattern" value="cmd /c mkdir &quot;E:\STILANABEL\PRJ\SAVON-BY\.github&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="powershell -Command &quot;New-Item -ItemType Directory -Path 'E:\STILANABEL\PRJ\SAVON-BY\.github\workflows' -Force&quot;" />
+        </Execute>
       </list>
     </option>
     <option name="autoApprovedReads">
