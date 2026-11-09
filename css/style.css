@@ -22,6 +22,7 @@ p{margin:0 0 1em}
 
 /* Breadcrumbs */
 .breadcrumbs{padding:20px 0;font-size:.95rem;color:var(--muted)}
+.breadcrumbs .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
 .breadcrumbs a{color:var(--muted);text-decoration:none}
 .breadcrumbs a:hover{text-decoration:underline}
 .breadcrumbs__sep{margin:0 8px;opacity:.5}
