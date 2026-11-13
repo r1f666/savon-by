@@ -1,103 +1,28 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Блог — натуральное мыло ручной работы | Savon.by</title>
-  <meta name="description" content="Полезные статьи о натуральном мыле, уходе за кожей, выборе подарков и секретах ручной работы. Советы от мастера мыловарения.">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#2F4A3A">
-  <link rel="canonical" href="https://savon.by/blog/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="Savon.by">
-  <meta property="og:title" content="Блог — Savon.by">
-  <meta property="og:description" content="Полезные статьи о натуральном мыле и уходе за кожей.">
-  <meta property="og:url" content="https://savon.by/blog/">
-  <meta property="og:image" content="https://savon.by/img/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Philosopher:wght@400;700&display=swap">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  <a class="skip" href="#main">К содержимому</a>
-  <header class="top">
-    <div class="wrap top__in">
-      <a class="logo" href="/" aria-label="Savon.by — на главную">
-        <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="2" y="9" width="28" height="16" rx="6" fill="#A58FCB"/><rect x="5" y="11" width="22" height="5" rx="3" fill="#fff" opacity=".3"/></svg>
-        <span>Savon.by</span>
-      </a>
-      <nav class="nav" aria-label="Разделы">
-        <a href="/catalog.html">Каталог</a>
-        <a href="/blog/">Блог</a>
-        <a href="/#about">О мастере</a>
-        <a href="/#reviews">Отзывы</a>
-        <a href="/#contacts">Контакты</a>
-      </nav>
-      <a class="btn btn--small" href="viber://chat?number=%2B375296498775" data-goal="viber_header">Viber</a>
+---
+layout: default
+title: Блог — статьи о натуральном мыле
+description: "Полезные статьи о натуральном мыле ручной работы: как ухаживать, почему мыло «плачет», подбор масел для кожи, подарочные наборы."
+breadcrumbs:
+  - text: Главная
+    url: /
+  - text: Блог
+    url: /blog/
+---
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="h2">Блог Savon.by</h2>
+    <p class="sub">Полезные статьи о натуральном мыле, уходе за кожей и выборе идеального мыла.</p>
+
+    <div class="blog-list">
+    {% for post in site.posts %}
+      <article class="blog-card">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="blog-card__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <a class="blog-card__link" href="{{ post.url }}">Читать далее →</a>
+      </article>
+    {% endfor %}
     </div>
-  </header>
-
-  <main id="main">
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <div class="wrap">
-        <a href="/">Главная</a>
-        <span class="breadcrumbs__sep" aria-hidden="true">/</span>
-        <span class="breadcrumbs__current">Блог</span>
-      </div>
-    </nav>
-
-    <section class="section">
-      <div class="wrap">
-        <h2 class="h2">Блог</h2>
-        <p class="sub">Полезные статьи о натуральном мыле, уходе за кожей, выборе подарков и секретах ручной работы. Делимся опытом мастерской.</p>
-
-        <div class="blog-list">
-          <article class="blog-card">
-            <time datetime="2026-11-13">13 ноября 2026</time>
-            <h3><a href="/blog/article-4.html">Что делать, если мыло «заплакало»: 5 ситуаций</a></h3>
-            <p class="blog-card__excerpt">Капельки на мыле, белый налёт, трещины, потеря аромата и «севший» цвет — разбираем частые проблемы натурального мыла и способы их решения.</p>
-            <a class="blog-card__link" href="/blog/article-4.html">Читать далее →</a>
-          </article>
-
-          <article class="blog-card">
-            <time datetime="2026-10-15">15 октября 2026</time>
-            <h3><a href="/blog/article-1.html">Как ухаживать за натуральным мылом: 5 простых правил</a></h3>
-            <p class="blog-card__excerpt">Рассказываем, как продлить жизнь мылу и сохранить его аромат надолго. Простые советы, которые помогут каждой плитке служить дольше.</p>
-            <a class="blog-card__link" href="/blog/article-1.html">Читать далее →</a>
-          </article>
-
-          <article class="blog-card">
-            <time datetime="2026-09-20">20 сентября 2026</time>
-            <h3><a href="/blog/article-2.html">Подарочные наборы из мыла: идеи и советы</a></h3>
-            <p class="blog-card__excerpt">Как выбрать идеальный подарок для близких и друзей. Разбираем популярные комбинации и идеи для праздников.</p>
-            <a class="blog-card__link" href="/blog/article-2.html">Читать далее →</a>
-          </article>
-
-          <article class="blog-card">
-            <time datetime="2026-08-10">10 августа 2026</time>
-            <h3><a href="/blog/article-3.html">Натуральные масла для разных типов кожи</a></h3>
-            <p class="blog-card__excerpt">Оливковое, кокосовое, миндальное — какое масло подходит именно вашей коже? Разбираемся в составах.</p>
-            <a class="blog-card__link" href="/blog/article-3.html">Читать далее →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <div class="wrap"><p>© <span id="year">2026</span> Savon.by — мыло ручной работы. Все права защищены.</p></div>
-  </footer>
-
-  <nav class="dock" aria-label="Быстрая связь">
-    <a href="tel:+375296498775" data-goal="call_dock">Позвонить</a>
-    <a href="viber://chat?number=%2B375296498775" data-goal="viber_dock">Viber</a>
-  </nav>
-  <script src="/js/main.js" defer></script>
-</body>
-</html>
+  </div>
+</section>

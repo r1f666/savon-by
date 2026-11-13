@@ -3,51 +3,57 @@
 > **Проект:** Статический сайт-визитка + каталог мыла ручной работы
 > **Домен:** `https://savon.by/` (GitHub Pages → `https://r1f666.github.io/savon-by/`)
 > **Репозиторий:** `https://github.com/r1f666/savon-by`
-> **Технологии:** Чистый HTML5 + CSS3 + Vanilla JS, zero-build, статический деплой
-> **Последнее обновление:** 2026-11-01
+> **Технологии:** Jekyll 4.3, Ruby 3.2, GitHub Pages, zero-build deploy
+> **Последнее обновление:** 2026-11-13
 
 ---
 
-## 1. Структура проекта
+## 1. Структура проекта (Jekyll)
 
 ```
 savon-by/
-├── index.html                    # Главная страница (hero + превью 3 товаров + блог + контакты)
-├── catalog.html                  # Полный каталог (6 товаров с фильтрацией)
-├── product-lav.html              # Детальная страница товара (план: product-hny, product-olv, product-alm, product-set, product-acc)
-├── 404.html                      # Страница ошибки
+├── _config.yml                   # Конфигурация Jekyll (title, url, plugins)
+├── Gemfile                       # Ruby-зависимости (jekyll, minima, plugins)
+├── index.html                    # Главная страница (layout: default)
+├── catalog.html                  # Каталог (layout: default)
+├── product-lav.html              # Детальная страница товара (layout: default)
+├── 404.html                      # Страница ошибки (статическая)
+├── _layouts/
+│   ├── default.html              # Базовый layout (header, nav, footer, dock)
+│   └── post.html                 # Layout для статей блога
+├── _posts/                       # Markdown-статьи блога
+│   ├── 2026-11-13-chto-delat-esli-mylo-zaplakalo.md
+│   ├── 2026-10-15-kak-uhazhivat-za-naturalnym-myлом.md
+│   ├── 2026-09-20-podarochnye-nabory-iz-myla.md
+│   └── 2026-08-10-naturalnye-masla-dlya-raznyh-tipov-kozhi.md
 ├── blog/
-│   ├── index.html                # Список статей блога
-│   ├── article-1.html            # Как ухаживать за натуральным мылом
-│   ├── article-2.html            # Подарочные наборы из мыла
-│   └── article-3.html            # Натуральные масла для разных типов кожи
+│   └── index.html                # Blog listing (Liquid: {% for post in site.posts %})
 ├── css/
-│   └── style.css                 # Все стили (CSS custom properties, responsive, grid/flex)
+│   └── style.css                 # Все стили (CSS custom properties, responsive)
 ├── js/
-│   └── main.js                   # Фильтр каталога, аналитика целей (YM/GA placeholder)
+│   └── main.js                   # Фильтр каталога, аналитика целей
 ├── img/
-│   ├── apple-touch-icon.png      # Иконка для iOS
-│   ├── og-image.png              # Open Graph изображение (1200x630)
-│   └── products/                 # Изображения товаров
-│       ├── lav/                  # Лавандовое мыло
-│       │   ├── main-400.webp     # Превью (placeholder)
-│       │   └── main-800.webp     # Высокое разрешение (placeholder)
-│       ├── hny/                  # Медовое мыло
-│       ├── olv/                  # Оливковое мыло
-│       ├── alm/                  # Миндальное мыло
-│       ├── set/                  # Подарочный набор
-│       └── acc/                  # Мыльница/аксессуары
-├── favicon.svg                   # SVG фавикон
-├── site.webmanifest              # PWA manifest
-├── sitemap.xml                   # SEO sitemap (6 URL)
-├── robots.txt                    # Разрешение всем ботам
-├── llm.txt                       # Документация для AI/LLM
-├── CNAME                         # Домен: savon.by
+│   ├── apple-touch-icon.png
+│   ├── og-image.png
+│   └── products/
+│       ├── lav/
+│       │   ├── main-400.webp
+│       │   └── main-800.webp
+│       ├── hny/
+│       ├── olv/
+│       ├── alm/
+│       ├── set/
+│       └── acc/
+├── favicon.svg
+├── site.webmanifest
+├── robots.txt
 ├── _headers                      # Security headers + cache control
+├── CNAME                         # Домен: savon.by
+├── llm.txt                       # Документация для AI/LLM
 ├── .github/
 │   └── workflows/
-│       └── pages.yml             # GitHub Actions: deploy on push to main
-├── .gitignore                    # Исключает IDE, OS, SERVICE.STILANABELBY/
+│       └── pages.yml             # GitHub Actions: Ruby setup → jekyll build → deploy
+├── .gitignore                    # Исключает _site/, .jekyll-cache/, Gemfile.lock
 └── SERVICE.STILANABELBY/         # Другой проект (не отслеживается git)
 ```
 
@@ -102,9 +108,9 @@ savon-by/
 - Пробелы в `data-sku`
 
 ### 3.4 Видимая разметка карточки (порядок)
-1. `<a class="card__media" href="/product-<id>.html">` с `<img>`
+1. `<a class="card__media" href="/product-<id>/">` с `<img>`
 2. `<p class="card__sku">Арт. <span data-sku-text>1001</span></p>`
-3. `<h3><a href="/product-<id>.html">Название</a></h3>`
+3. `<h3><a href="/product-<id>/">Название</a></h3>`
 4. `<p>Краткое описание (1-2 строки)</p>`
 5. `<p class="card__price">15 руб.</p>`
 6. `<a class="btn btn--primary" href="viber://...">Заказать в Viber</a>`
@@ -125,15 +131,15 @@ savon-by/
 
 ## 4. SEO и мета-данные
 
-### 4.1 Canonical URLs
+### 4.1 Canonical URLs (Jekyll permalinks)
 - Главная: `https://savon.by/`
-- Каталог: `https://savon.by/catalog.html`
+- Каталог: `https://savon.by/catalog/`
 - Блог: `https://savon.by/blog/`
-- Статьи: `https://savon.by/blog/article-1.html` и т.д.
-- Товары: `https://savon.by/product-<id>.html`
+- Статьи: `https://savon.by/blog/<slug>/` (Jekyll генерирует папки)
+- Товары: `https://savon.by/product-<id>/`
 
 ### 4.2 Schema.org (JSON-LD)
-- **Store** на главной: name, telephone, email, address, hasOfferCatalog
+- **Store** на всех страницах: name, telephone, email, address, hasOfferCatalog
 - **Product** на детальной странице: name, sku, description, offers (price, currency, availability, seller)
 - **Article** на страницах блога: headline, datePublished, author, description
 
@@ -144,19 +150,48 @@ savon-by/
 
 ---
 
-## 5. Сортировка и поиск (JS-контракт)
+## 5. Jekyll — архитектура
 
-### 5.1 Фильтр (main.js)
+### 5.1 Layouts
+- `_layouts/default.html` — базовый layout с header, nav, footer, dock
+- `_layouts/post.html` — наследует default, добавляет breadcrumbs + CTA
+
+### 5.2 Blog
+- Статьи в `_posts/` в формате `YYYY-MM-DD-slug.md`
+- Blog listing в `blog/index.html` с Liquid: `{% for post in site.posts %}`
+- Автоматическая генерация RSS через `jekyll-feed`
+- Автоматическая генерация sitemap через `jekyll-sitemap`
+
+### 5.3 Plugins
+- `jekyll-feed` — генерация RSS
+- `jekyll-sitemap` — генерация sitemap.xml
+- `jekyll-seo-tag` — SEO мета-теги
+- `minima` — базовая тема (отключена, используем custom layouts)
+
+### 5.4 CSS
+- Стили в `css/style.css` (не в `_sass/`, для простоты)
+- CSS custom properties в `:root`
+- Responsive: `@media (max-width: 900px)` и `@media (max-width: 620px)`
+
+### 5.5 JS
+- `js/main.js` — фильтр каталога, аналитика целей
+- Подключается через `<script src="/js/main.js" defer></script>`
+
+---
+
+## 6. Сортировка и поиск (JS-контракт)
+
+### 6.1 Фильтр (main.js)
 - Использует `data-cat` + `card.hidden`
 - Фильтры: `all`, `soap`, `set`, `acc`
 
-### 5.2 Сортировка (catalog.js — план)
+### 6.2 Сортировка (catalog.js — план)
 - По цене: `Number(card.dataset.price)`
 - По названию: `card.dataset.name.localeCompare('ru')`
 - По артикулу: `Number(card.dataset.sku)`
 - По новинкам: `card.dataset.date` (YYYY-MM-DD)
 
-### 5.3 Поиск (catalog.js — план)
+### 6.3 Поиск (catalog.js — план)
 ```javascript
 const searchable = (card.dataset.name + ' ' + card.dataset.tags + ' ' + card.dataset.sku).toLowerCase();
 searchable.includes(term.toLowerCase());
@@ -166,9 +201,9 @@ searchable.includes(term.toLowerCase());
 
 ---
 
-## 6. Изображения товаров
+## 7. Изображения товаров
 
-### 6.1 Структура папок
+### 7.1 Структура папок
 ```
 img/products/<id>/
 ├── main-400.webp    # Превью (обязательно)
@@ -176,25 +211,29 @@ img/products/<id>/
 └── main-1200.webp   # Для OG/детальной страницы (план)
 ```
 
-### 6.2 Формат
+### 7.2 Формат
 - **WebP** — обязательный формат
 - JPG — только фолбэк, если WebP недоступен
 - Оригиналы > 1200px **не коммитить**
 
-### 6.3 Placeholder-файлы
+### 7.3 Placeholder-файлы
 Созданы placeholder-файлы (текстовые .webp) в `/img/products/*/main-400.webp` и `main-800.webp`. Заменить на реальные фото.
 
 ---
 
-## 7. GitHub Pages — деплой
+## 8. GitHub Pages — деплой
 
-### 7.1 GitHub Actions
+### 8.1 GitHub Actions
 - Файл: `.github/workflows/pages.yml`
 - Триггер: push на `main`
-- Артефакт: весь репозиторий (`path: "."`)
-- Исключён `SERVICE.STILANABELBY/` из отслеживания git
+- Steps:
+  1. `actions/checkout@v4`
+  2. `ruby/setup-ruby@v1` → `bundler-cache: true`
+  3. `actions/jekyll-build-pages@v1` → `source: ./`, `destination: ./_site`
+  4. `actions/upload-pages-artifact@v3` → `path: ./_site`
+  5. `actions/deploy-pages@v4`
 
-### 7.2 DNS (domain.by)
+### 8.2 DNS (domain.by)
 4 A-записи для `savon.by`:
 ```
 185.199.108.153
@@ -203,12 +242,12 @@ img/products/<id>/
 185.199.111.153
 ```
 
-### 7.3 CNAME
+### 8.3 CNAME
 Файл `CNAME` в корне: `savon.by`
 
 ---
 
-## 8. CSS — система переменных
+## 9. CSS — система переменных
 
 ```css
 :root {
@@ -227,7 +266,7 @@ img/products/<id>/
 }
 ```
 
-### 8.1 Ключевые классы
+### 9.1 Ключевые классы
 - `.wrap` — контейнер (max-width: 1120px, margin-inline: auto)
 - `.btn`, `.btn--primary`, `.btn--ghost`, `.btn--small`, `.btn--light`, `.btn--outline`
 - `.card`, `.card__media`, `.card__img`, `.card__sku`, `.card__body`, `.card__price`
@@ -235,16 +274,15 @@ img/products/<id>/
 - `.grid` — сетка товаров (3 колонки → 2 → 1)
 - `.breadcrumbs`, `.breadcrumbs__sep`, `.breadcrumbs__current`
 - `.blog-card`, `.blog-card__excerpt`, `.blog-card__link`
-- `.product-card`, `.product-card__image`, `.product-card__body`, `.product-card__section`
 - `.dock` — нижняя навигация (мобильная)
 
-### 8.2 Адаптивность
+### 9.2 Адаптивность
 - `@media (max-width: 900px)` — 2 колонки, скрытое меню
 - `@media (max-width: 620px)` — 1 колонка, dock-навигация
 
 ---
 
-## 9. JS — main.js
+## 10. JS — main.js
 
 ```javascript
 // Инициализация
@@ -262,54 +300,40 @@ if (y) y.textContent = new Date().getFullYear();
 // data-goal="order_lav" → window.gtag('event', goal)
 ```
 
-### 9.1 Placeholder для аналитики
+### 10.1 Placeholder для аналитики
 ```javascript
 var YM_ID = 0;  // Вставить номер Яндекс.Метрики
 ```
 
 ---
 
-## 10. Файлы для создания (план)
-
-| Файл | Статус | Описание |
-|------|--------|----------|
-| `product-hny.html` | ❌ План | Медовое мыло (арт. 1002) |
-| `product-olv.html` | ❌ План | Оливковое мыло (арт. 1003) |
-| `product-alm.html` | ❌ План | Миндальное мыло (арт. 1004) |
-| `product-set.html` | ❌ План | Подарочный набор (арт. 2001) |
-| `product-acc.html` | ❌ План | Мыльница (арт. 3001) |
-| `blog/article-4.html` | ❌ План | Следующая статья блога |
-| `products.json` | ❌ План | JSON-список товаров (отдельная задача) |
-
----
-
 ## 11. Правила для AI-агентов
 
 ### 11.1 Запрещено
-- ❌ Добавлять сборщики/зависимости (npm, webpack, и т.д.)
+- ❌ Коммитить оригиналы изображений > 1200px
 - ❌ Менять `data-id`/`data-sku` существующих товаров
 - ❌ Выдумывать новые товары сверх списка (раздел 3.1)
 - ❌ Коммитить/пушить без запроса
 - ❌ Рефакторить `style.css` целиком — только точечные классы
-- ❌ Создавать `products.json` (это план, отдельная задача)
 - ❌ Трогать `.github/workflows/pages.yml` без согласования
 - ❌ Использовать Telegram/Instagram ссылки — только Viber/Email
+- ❌ Создавать файлы вне `_posts/` для блога
 
 ### 11.2 Обязательно
 - ✅ Сохранять UTF-8 кодировку, только кириллица в видимом тексте
 - ✅ Синхронизировать `data-id`/`data-sku` между `catalog.html` и `index.html`
 - ✅ Не ломать фильтр в `js/main.js` (data-cat + card.hidden)
-- ✅ Обновлять `sitemap.xml` при появлении новых страниц
-- ✅ Обновлять `llm.txt` при изменениях структуры
 - ✅ Использовать `viber://chat?number=%2B375296498775` для заказов
 - ✅ Включать артикул в Viber-ссылку: `text=Хочу заказать: {название} (арт. {sku})`
 - ✅ Валидный HTML (открывается, не ломает сетку .grid)
+- ✅ Использовать Jekyll-конвенции: `_layouts/`, `_posts/`, `blog/index.html`
 
 ### 11.3 Конвенции именования
 - `data-id`: латиница, нижний регистр, краткий (`lav`, `hny`, `olv`, `alm`, `set`, `acc`)
 - `data-sku`: строка цифр, 4 символа
 - Файлы: kebab-case (`product-lav.html`, `style.css`)
 - Папки: lowercase (`blog/`, `css/`, `js/`, `img/`)
+- Статьи: `YYYY-MM-DD-slug.md` в `_posts/`
 
 ---
 
@@ -321,12 +345,12 @@ var YM_ID = 0;  // Вставить номер Яндекс.Метрики
 - [ ] data-sku — строка цифр, не число
 - [ ] data-price — число, не "15 руб"
 - [ ] <img> имеет src, srcset, sizes, width, height, alt, loading, decoding
-- [ ] Ссылки ведут на /product-<id>.html (обе: обёртка и h3)
+- [ ] Ссылки ведут на /product-<id>/ (Jekyll permalinks)
 - [ ] Видимый артикул «Арт. 1001» присутствует
 - [ ] Русский текст читается, нет кракозябр
 - [ ] Валидный HTML, сетка не сломана
-- [ ] sitemap.xml обновлён при добавлении страниц
-- [ ] llm.txt обновлён при изменениях структуры
+- [ ] Статьи в `_posts/` с правильным YAML-фронтматтом
+- [ ] Не коммитить оригиналы изображений > 1200px
 
 ---
 
@@ -342,3 +366,4 @@ var YM_ID = 0;  // Вставить номер Яндекс.Метрики
 ---
 
 *Документ создан для обеспечения консистентности при работе с проектом различными AI-агентами.*
+*Миграция на Jekyll завершена: 2026-11-13*

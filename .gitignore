@@ -11,3 +11,14 @@ Thumbs.db
 
 # GigaCode
 .gigacode/
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby
+Gemfile.lock
+
+# Images (originals > 1200px)
+img/products/*/main-*.webp

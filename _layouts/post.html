@@ -1,0 +1,29 @@
+---
+layout: default
+breadcrumbs:
+  - text: Главная
+    url: /
+  - text: Блог
+    url: /blog/
+---
+<article class="section">
+  <div class="wrap article">
+    <h2 class="h2">{{ page.title }}</h2>
+    <time datetime="{{ page.date | date_to_xmlschema }}" class="article__date">{{ page.date | date: "%d %B %Y" }}</time>
+
+    {{ content }}
+
+    <p style="margin-top:32px;padding:24px;background:var(--sage);border-radius:var(--r);">
+      <strong>Хотите попробовать натуральное мыло ручной работы?</strong>
+      Позвоните или напишите в Viber: <a href="tel:+{{ site.viber }}">{{ site.phone }}</a> или на <a href="mailto:{{ site.email }}">{{ site.email }}</a> — поможем выбрать идеальный вариант!
+    </p>
+  </div>
+</article>
+
+<section class="section section--tint" style="padding:52px 0;">
+  <div class="wrap" style="text-align:center;">
+    <h3 style="margin-bottom:16px;">Нравится читать наш блог?</h3>
+    <p class="sub" style="margin:0 auto 24px;">Смотрите другие статьи о натуральном мыле и уходе за кожей.</p>
+    <a class="btn btn--primary" href="/blog/">Все статьи блога →</a>
+  </div>
+</section>

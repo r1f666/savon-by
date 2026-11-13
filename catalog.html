@@ -1,185 +1,100 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Каталог — мыло ручной работы | Savon.by</title>
-  <meta name="description" content="Каталог мыла ручной работы из натуральных ингредиентов. Лавандовое, медовое, оливковое, миндальное мыло, подарочные наборы. Доставка по Минску и Беларуси.">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#2F4A3A">
-  <link rel="canonical" href="https://savon.by/catalog.html">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="Savon.by">
-  <meta property="og:title" content="Каталог — мыло ручной работы | Savon.by">
-  <meta property="og:description" content="Каталог мыла ручной работы из натуральных ингредиентов.">
-  <meta property="og:url" content="https://savon.by/catalog.html">
-  <meta property="og:image" content="https://savon.by/img/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Philosopher:wght@400;700&display=swap">
-  <link rel="stylesheet" href="/css/style.css">
+---
+layout: default
+title: Каталог — мыло ручной работы
+description: Каталог мыла ручной работы из натуральных ингредиентов. Лавандовое, медовое, оливковое, миндальное мыло, подарочные наборы. Доставка по Минску и Беларуси.
+breadcrumbs:
+  - text: Главная
+    url: /
+  - text: Каталог
+    url: /catalog/
+---
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Store",
-    "name": "Savon.by",
-    "telephone": "+375296498775",
-    "email": "savonby@ya.ru",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "пр-т Дзержинского 131",
-      "addressLocality": "Минск",
-      "addressCountry": "BY"
-    },
-    "url": "https://savon.by/",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Каталог мыла ручной работы",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Лавандовое мыло", "sku": "1001", "offers": {"@type": "Offer", "priceCurrency": "BYN", "price": "15"}}},
-        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Медовое мыло", "sku": "1002", "offers": {"@type": "Offer", "priceCurrency": "BYN", "price": "15"}}},
-        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Оливковое мыло", "sku": "1003", "offers": {"@type": "Offer", "priceCurrency": "BYN", "price": "15"}}},
-        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Миндальное мыло", "sku": "1004", "offers": {"@type": "Offer", "priceCurrency": "BYN", "price": "15"}}},
-        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Подарочный набор", "sku": "2001", "offers": {"@type": "Offer", "priceCurrency": "BYN", "price": "45"}}},
-        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Мыльница / аксессуары", "sku": "3001", "offers": {"@type": "Offer", "priceCurrency": "BYN", "price": "12"}}}
-      ]
-    }
-  }
-  </script>
-</head>
-<body>
-  <a class="skip" href="#main">К содержимому</a>
-  <header class="top">
-    <div class="wrap top__in">
-      <a class="logo" href="/" aria-label="Savon.by — на главную">
-        <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="2" y="9" width="28" height="16" rx="6" fill="#A58FCB"/><rect x="5" y="11" width="22" height="5" rx="3" fill="#fff" opacity=".3"/></svg>
-        <span>Savon.by</span>
-      </a>
-      <nav class="nav" aria-label="Разделы">
-        <a href="/catalog.html">Каталог</a>
-        <a href="/blog/">Блог</a>
-        <a href="/#about">О мастере</a>
-        <a href="/#reviews">Отзывы</a>
-        <a href="/#contacts">Контакты</a>
-      </nav>
-      <a class="btn btn--small" href="viber://chat?number=%2B375296498775" data-goal="viber_header">Viber</a>
+<section class="section">
+  <div class="wrap">
+    <h2 class="h2">Каталог мыла</h2>
+    <p class="sub">Вся продукция изготавливается вручную небольшими партиями. Цены и наличие уточняйте в переписке.</p>
+
+    <div class="chips" role="group" aria-label="Фильтр каталога">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">Всё</button>
+      <button type="button" class="chip" data-filter="soap" aria-pressed="false">Мыло</button>
+      <button type="button" class="chip" data-filter="set" aria-pressed="false">Наборы</button>
+      <button type="button" class="chip" data-filter="acc" aria-pressed="false">Аксессуары</button>
     </div>
-  </header>
 
-  <main id="main">
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <div class="wrap">
-        <a href="/">Главная</a>
-        <span class="breadcrumbs__sep" aria-hidden="true">/</span>
-        <span class="breadcrumbs__current">Каталог</span>
-      </div>
-    </nav>
+    <div class="grid">
+    <!-- Лавандовое мыло -->
+    <article class="card" data-id="lav" data-sku="1001" data-cat="soap" data-name="Лавандовое мыло" data-price="15" data-tags="лаванда успокаивающее чувствительная-кожа" data-img="/img/products/lav/main-400.webp" data-img-alt="Лавандовое мыло ручной работы">
+      <a class="card__media" href="/product-lav/">
+        <img class="card__img" src="/img/products/lav/main-400.webp" srcset="/img/products/lav/main-400.webp 400w, /img/products/lav/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Лавандовое мыло ручной работы" loading="lazy" decoding="async">
+      </a>
+      <p class="card__sku">Арт. <span data-sku-text>1001</span></p>
+      <h3><a href="/product-lav/">Лавандовое мыло</a></h3>
+      <p>Успокаивающее, для чувствительной кожи. На основе лавандового эфирного масла.</p>
+      <p class="card__price">15 руб.</p>
+      <a class="btn btn--primary" href="viber://chat?number=%2B{{ site.viber }}&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9B%D0%B0%D0%B2%D0%B0%D0%BD%D0%B4%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BC%D1%8B%D0%BB%D0%BE%20(%D0%B0%D1%80%D1%82.%201001)" data-goal="order_lav">Заказать в Viber</a>
+    </article>
 
-    <section class="section">
-      <div class="wrap">
-        <h2 class="h2">Каталог мыла</h2>
-        <p class="sub">Вся продукция изготавливается вручную небольшими партиями. Цены и наличие уточняйте в переписке.</p>
+    <!-- Медовое мыло -->
+    <article class="card" data-id="hny" data-sku="1002" data-cat="soap" data-name="Медовое мыло" data-price="15" data-tags="мёд питательное сухая-кожа восстанавливающее" data-img="/img/products/hny/main-400.webp" data-img-alt="Медовое мыло ручной работы">
+      <a class="card__media" href="/product-hny/">
+        <img class="card__img" src="/img/products/hny/main-400.webp" srcset="/img/products/hny/main-400.webp 400w, /img/products/hny/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Медовое мыло ручной работы" loading="lazy" decoding="async">
+      </a>
+      <p class="card__sku">Арт. <span data-sku-text>1002</span></p>
+      <h3><a href="/product-hny/">Медовое мыло</a></h3>
+      <p>Питательное, с натуральным мёдом. Для сухой и уставшей кожи.</p>
+      <p class="card__price">15 руб.</p>
+      <a class="btn btn--primary" href="viber://chat?number=%2B{{ site.viber }}&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9C%D0%B5%D0%B4%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BC%D1%8B%D0%BB%D0%BE%20(%D0%B0%D1%80%D1%82.%201002)" data-goal="order_hny">Заказать в Viber</a>
+    </article>
 
-        <div class="chips" role="group" aria-label="Фильтр каталога">
-          <button type="button" class="chip" data-filter="all" aria-pressed="true">Всё</button>
-          <button type="button" class="chip" data-filter="soap" aria-pressed="false">Мыло</button>
-          <button type="button" class="chip" data-filter="set" aria-pressed="false">Наборы</button>
-          <button type="button" class="chip" data-filter="acc" aria-pressed="false">Аксессуары</button>
-        </div>
+    <!-- Оливковое мыло -->
+    <article class="card" data-id="olv" data-sku="1003" data-cat="soap" data-name="Оливковое мыло" data-price="15" data-tags="оливковое мягкое ежедневное увлажняющее" data-img="/img/products/olv/main-400.webp" data-img-alt="Оливковое мыло ручной работы">
+      <a class="card__media" href="/product-olv/">
+        <img class="card__img" src="/img/products/olv/main-400.webp" srcset="/img/products/olv/main-400.webp 400w, /img/products/olv/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Оливковое мыло ручной работы" loading="lazy" decoding="async">
+      </a>
+      <p class="card__sku">Арт. <span data-sku-text>1003</span></p>
+      <h3><a href="/product-olv/">Оливковое мыло</a></h3>
+      <p>Мягкое, на основе оливкового масла. Для ежедневного ухода.</p>
+      <p class="card__price">15 руб.</p>
+      <a class="btn btn--primary" href="viber://chat?number=%2B{{ site.viber }}&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9E%D0%BB%D0%B8%D0%B2%D0%BA%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BC%D1%8B%D0%BB%D0%BE%20(%D0%B0%D1%80%D1%82.%201003)" data-goal="order_olv">Заказать в Viber</a>
+    </article>
 
-        <div class="grid">
-        <!-- Лавандовое мыло -->
-        <article class="card" data-id="lav" data-sku="1001" data-cat="soap" data-name="Лавандовое мыло" data-price="15" data-tags="лаванда успокаивающее чувствительная-кожа" data-img="/img/products/lav/main-400.webp" data-img-alt="Лавандовое мыло ручной работы">
-          <a class="card__media" href="/product-lav.html">
-            <img class="card__img" src="/img/products/lav/main-400.webp" srcset="/img/products/lav/main-400.webp 400w, /img/products/lav/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Лавандовое мыло ручной работы" loading="lazy" decoding="async">
-          </a>
-          <p class="card__sku">Арт. <span data-sku-text>1001</span></p>
-          <h3><a href="/product-lav.html">Лавандовое мыло</a></h3>
-          <p>Успокаивающее, для чувствительной кожи. На основе лавандового эфирного масла.</p>
-          <p class="card__price">15 руб.</p>
-          <a class="btn btn--primary" href="viber://chat?number=%2B375296498775&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9B%D0%B0%D0%B2%D0%B0%D0%BD%D0%B4%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BC%D1%8B%D0%BB%D0%BE%20(%D0%B0%D1%80%D1%82.%201001)" data-goal="order_lav">Заказать в Viber</a>
-        </article>
+    <!-- Миндальное мыло -->
+    <article class="card" data-id="alm" data-sku="1004" data-cat="soap" data-name="Миндальное мыло" data-price="15" data-tags="миндальное нежная-кожа детей-с-3-лет увлажняющее" data-img="/img/products/alm/main-400.webp" data-img-alt="Миндальное мыло ручной работы">
+      <a class="card__media" href="/product-alm/">
+        <img class="card__img" src="/img/products/alm/main-400.webp" srcset="/img/products/alm/main-400.webp 400w, /img/products/alm/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Миндальное мыло ручной работы" loading="lazy" decoding="async">
+      </a>
+      <p class="card__sku">Арт. <span data-sku-text>1004</span></p>
+      <h3><a href="/product-alm/">Миндальное мыло</a></h3>
+      <p>С миндальным маслом для нежной кожи. Подходит для детей с 3 лет.</p>
+      <p class="card__price">15 руб.</p>
+      <a class="btn btn--primary" href="viber://chat?number=%2B{{ site.viber }}&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9C%D0%B8%D0%BD%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BC%D1%8B%D0%BB%D0%BE%20(%D0%B0%D1%80%D1%82.%201004)" data-goal="order_alm">Заказать в Viber</a>
+    </article>
 
-        <!-- Медовое мыло -->
-        <article class="card" data-id="hny" data-sku="1002" data-cat="soap" data-name="Медовое мыло" data-price="15" data-tags="мёд питательное сухая-кожа восстанавливающее" data-img="/img/products/hny/main-400.webp" data-img-alt="Медовое мыло ручной работы">
-          <a class="card__media" href="/product-hny.html">
-            <img class="card__img" src="/img/products/hny/main-400.webp" srcset="/img/products/hny/main-400.webp 400w, /img/products/hny/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Медовое мыло ручной работы" loading="lazy" decoding="async">
-          </a>
-          <p class="card__sku">Арт. <span data-sku-text>1002</span></p>
-          <h3><a href="/product-hny.html">Медовое мыло</a></h3>
-          <p>Питательное, с натуральным мёдом. Для сухой и уставшей кожи.</p>
-          <p class="card__price">15 руб.</p>
-          <a class="btn btn--primary" href="viber://chat?number=%2B375296498775&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9C%D0%B5%D0%B4%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BC%D1%8B%D0%BB%D0%BE%20(%D0%B0%D1%80%D1%82.%201002)" data-goal="order_hny">Заказать в Viber</a>
-        </article>
+    <!-- Подарочный набор -->
+    <article class="card" data-id="set" data-sku="2001" data-cat="set" data-name="Подарочный набор" data-price="45" data-tags="подарок набор праздничное-упаковка" data-date="2026-10-01" data-badge="новинка" data-img="/img/products/set/main-400.webp" data-img-alt="Подарочный набор из мыла ручной работы">
+      <a class="card__media" href="/product-set/">
+        <img class="card__img" src="/img/products/set/main-400.webp" srcset="/img/products/set/main-400.webp 400w, /img/products/set/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Подарочный набор из мыла ручной работы" loading="lazy" decoding="async">
+      </a>
+      <p class="card__sku">Арт. <span data-sku-text>2001</span></p>
+      <h3><a href="/product-set/">Подарочный набор</a></h3>
+      <p>3 вида мыла в красивой крафтовой упаковке. Идеально для подарка.</p>
+      <p class="card__price">45 руб.</p>
+      <a class="btn btn--primary" href="viber://chat?number=%2B{{ site.viber }}&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9F%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%20(%D0%B0%D1%80%D1%82.%202001)" data-goal="order_set">Заказать в Viber</a>
+    </article>
 
-        <!-- Оливковое мыло -->
-        <article class="card" data-id="olv" data-sku="1003" data-cat="soap" data-name="Оливковое мыло" data-price="15" data-tags="оливковое мягкое ежедневное увлажняющее" data-img="/img/products/olv/main-400.webp" data-img-alt="Оливковое мыло ручной работы">
-          <a class="card__media" href="/product-olv.html">
-            <img class="card__img" src="/img/products/olv/main-400.webp" srcset="/img/products/olv/main-400.webp 400w, /img/products/olv/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Оливковое мыло ручной работы" loading="lazy" decoding="async">
-          </a>
-          <p class="card__sku">Арт. <span data-sku-text>1003</span></p>
-          <h3><a href="/product-olv.html">Оливковое мыло</a></h3>
-          <p>Мягкое, на основе оливкового масла. Для ежедневного ухода.</p>
-          <p class="card__price">15 руб.</p>
-          <a class="btn btn--primary" href="viber://chat?number=%2B375296498775&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9E%D0%BB%D0%B8%D0%B2%D0%BA%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BC%D1%8B%D0%BB%D0%BE%20(%D0%B0%D1%80%D1%82.%201003)" data-goal="order_olv">Заказать в Viber</a>
-        </article>
+    <!-- Мыльница / аксессуары -->
+    <article class="card" data-id="acc" data-sku="3001" data-cat="acc" data-name="Мыльница / аксессуары" data-price="12" data-tags="мыльница аксессуары уход-за-мылом" data-img="/img/products/acc/main-400.webp" data-img-alt="Мыльница для натурального мыла">
+      <a class="card__media" href="/product-acc/">
+        <img class="card__img" src="/img/products/acc/main-400.webp" srcset="/img/products/acc/main-400.webp 400w, /img/products/acc/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Мыльница для натурального мыла" loading="lazy" decoding="async">
+      </a>
+      <p class="card__sku">Арт. <span data-sku-text>3001</span></p>
+      <h3><a href="/product-acc/">Мыльница / аксессуары</a></h3>
+      <p>Всё, чтобы мыло служило дольше. Состав набора обсудим в переписке.</p>
+      <p class="card__price">12 руб.</p>
+      <a class="btn btn--primary" href="viber://chat?number=%2B{{ site.viber }}&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9C%D1%8B%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%B0%20(%D0%B0%D1%80%D1%82.%203001)" data-goal="order_acc">Заказать в Viber</a>
+    </article>
+    </div>
 
-        <!-- Миндальное мыло -->
-        <article class="card" data-id="alm" data-sku="1004" data-cat="soap" data-name="Миндальное мыло" data-price="15" data-tags="миндальное нежная-кожа детей-с-3-лет увлажняющее" data-img="/img/products/alm/main-400.webp" data-img-alt="Миндальное мыло ручной работы">
-          <a class="card__media" href="/product-alm.html">
-            <img class="card__img" src="/img/products/alm/main-400.webp" srcset="/img/products/alm/main-400.webp 400w, /img/products/alm/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Миндальное мыло ручной работы" loading="lazy" decoding="async">
-          </a>
-          <p class="card__sku">Арт. <span data-sku-text>1004</span></p>
-          <h3><a href="/product-alm.html">Миндальное мыло</a></h3>
-          <p>С миндальным маслом для нежной кожи. Подходит для детей с 3 лет.</p>
-          <p class="card__price">15 руб.</p>
-          <a class="btn btn--primary" href="viber://chat?number=%2B375296498775&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9C%D0%B8%D0%BD%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BC%D1%8B%D0%BB%D0%BE%20(%D0%B0%D1%80%D1%82.%201004)" data-goal="order_alm">Заказать в Viber</a>
-        </article>
-
-        <!-- Подарочный набор -->
-        <article class="card" data-id="set" data-sku="2001" data-cat="set" data-name="Подарочный набор" data-price="45" data-tags="подарок набор праздничное-упаковка" data-date="2026-10-01" data-badge="новинка" data-img="/img/products/set/main-400.webp" data-img-alt="Подарочный набор из мыла ручной работы">
-          <a class="card__media" href="/product-set.html">
-            <img class="card__img" src="/img/products/set/main-400.webp" srcset="/img/products/set/main-400.webp 400w, /img/products/set/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Подарочный набор из мыла ручной работы" loading="lazy" decoding="async">
-          </a>
-          <p class="card__sku">Арт. <span data-sku-text>2001</span></p>
-          <h3><a href="/product-set.html">Подарочный набор</a></h3>
-          <p>3 вида мыла в красивой крафтовой упаковке. Идеально для подарка.</p>
-          <p class="card__price">45 руб.</p>
-          <a class="btn btn--primary" href="viber://chat?number=%2B375296498775&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9F%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%20(%D0%B0%D1%80%D1%82.%202001)" data-goal="order_set">Заказать в Viber</a>
-        </article>
-
-        <!-- Мыльница / аксессуары -->
-        <article class="card" data-id="acc" data-sku="3001" data-cat="acc" data-name="Мыльница / аксессуары" data-price="12" data-tags="мыльница аксессуары уход-за-мылом" data-img="/img/products/acc/main-400.webp" data-img-alt="Мыльница для натурального мыла">
-          <a class="card__media" href="/product-acc.html">
-            <img class="card__img" src="/img/products/acc/main-400.webp" srcset="/img/products/acc/main-400.webp 400w, /img/products/acc/main-800.webp 800w" sizes="(max-width:620px) 100vw, 33vw" width="400" height="400" alt="Мыльница для натурального мыла" loading="lazy" decoding="async">
-          </a>
-          <p class="card__sku">Арт. <span data-sku-text>3001</span></p>
-          <h3><a href="/product-acc.html">Мыльница / аксессуары</a></h3>
-          <p>Всё, чтобы мыло служило дольше. Состав набора обсудим в переписке.</p>
-          <p class="card__price">12 руб.</p>
-          <a class="btn btn--primary" href="viber://chat?number=%2B375296498775&text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%3A%20%D0%9C%D1%8B%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%B0%20(%D0%B0%D1%80%D1%82.%203001)" data-goal="order_acc">Заказать в Viber</a>
-        </article>
-        </div>
-
-        <p class="sub" style="text-align:center;margin-top:32px;">Нужно что-то особенное: другой аромат, цвет или набор на праздник? Напишите, сделаем под заказ.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <div class="wrap"><p>© <span id="year">2026</span> Savon.by — мыло ручной работы. Все права защищены.</p></div>
-  </footer>
-
-  <nav class="dock" aria-label="Быстрая связь">
-    <a href="tel:+375296498775" data-goal="call_dock">Позвонить</a>
-    <a href="viber://chat?number=%2B375296498775" data-goal="viber_dock">Viber</a>
-  </nav>
-  <script src="/js/main.js" defer></script>
-</body>
-</html>
+    <p class="sub" style="text-align:center;margin-top:32px;">Нужно что-то особенное: другой аромат, цвет или набор на праздник? Напишите, сделаем под заказ.</p>
+  </div>
+</section>

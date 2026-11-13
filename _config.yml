@@ -1,0 +1,42 @@
+# Savon.by — Jekyll configuration
+title: Savon.by
+email: savonby@ya.ru
+description: >-
+  Натуральное мыло ручной работы из натуральных масел и эфирных масел,
+  без парабенов и сульфатов. Подарочные наборы, доставка по Минску и всей Беларуси.
+baseurl: ""
+url: "https://savon.by"
+author:
+  name: Мастерская Savon.by
+  email: savonby@ya.ru
+  telegram:
+  instagram:
+
+# Phone / Viber / Address
+phone: "+375 29 649 87 75"
+viber: "+375296498775"
+address: "г. Минск, пр-т Дзержинского 131"
+
+# Theme
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Markdown
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+
+# Locale
+locale: ru_RU
+
+# Excludes
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - _site
+  - .jekyll-cache
