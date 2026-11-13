@@ -1,0 +1,10 @@
+fix: complete blog architecture migration
+
+- Delete old HTML blog articles (article-1..4.html)
+- Add permalink to blog/index.html (/blog/)
+- Add permalink to catalog.html (/catalog/)
+- Add permalink to product-lav.html (/product-lav/)
+- Update sitemap.xml with new Jekyll URLs
+- Update llm.txt with new Jekyll URLs
+- Update 404.html links to use Jekyll permalinks
+- All blog posts now use /blog/<slug>/ URL format
