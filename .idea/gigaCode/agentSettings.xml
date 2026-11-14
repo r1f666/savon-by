@@ -24,12 +24,39 @@
         <Execute>
           <option name="pattern" value="powershell -Command &quot;New-Item -ItemType Directory -Path 'E:\STILANABEL\PRJ\SAVON-BY\.github\workflows' -Force&quot;" />
         </Execute>
+        <Execute>
+          <option name="pattern" value="ls *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="echo *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="pwd" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="cd *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="git add *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="git status" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="git log *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="git commit *" />
+        </Execute>
       </list>
     </option>
     <option name="autoApprovedReads">
       <list>
         <Read>
           <option name="pattern" value="$PROJECT_DIR$/../for StilanaBel.by/*" />
+        </Read>
+        <Read>
+          <option name="pattern" value="$PROJECT_DIR$/../../*" />
         </Read>
       </list>
     </option>
