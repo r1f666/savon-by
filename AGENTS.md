@@ -4,7 +4,7 @@
 > **Домен:** `https://savon.by/` (GitHub Pages → `https://r1f666.github.io/savon-by/`)
 > **Репозиторий:** `https://github.com/r1f666/savon-by`
 > **Технологии:** Jekyll 4.3, Ruby 3.2, GitHub Pages, zero-build deploy
-> **Последнее обновление:** 2026-11-13
+> **Последнее обновление:** 2026-11-15
 
 ---
 
@@ -17,11 +17,14 @@ savon-by/
 ├── index.html                    # Главная страница (layout: default)
 ├── catalog.html                  # Каталог (layout: default)
 ├── product-lav.html              # Детальная страница товара (layout: default)
+├── product-hny.html              # Детальная страница товара (layout: default)
+├── product-olv.html              # Детальная страница товара (layout: default)
 ├── 404.html                      # Страница ошибки (статическая)
 ├── _layouts/
 │   ├── default.html              # Базовый layout (header, nav, footer, dock)
 │   └── post.html                 # Layout для статей блога
 ├── _posts/                       # Markdown-статьи блога
+│   ├── 2026-11-15-bombochka-dlya-vanny.md
 │   ├── 2026-11-13-chto-delat-esli-mylo-zaplakalo.md
 │   ├── 2026-10-15-kak-uhazhivat-za-naturalnym-myлом.md
 │   ├── 2026-09-20-podarochnye-nabory-iz-myla.md
@@ -229,7 +232,7 @@ img/products/<id>/
 - Steps:
   1. `actions/checkout@v4`
   2. `ruby/setup-ruby@v1` → `bundler-cache: true`
-  3. `actions/jekyll-build-pages@v1` → `source: ./`, `destination: ./_site`
+  3. `bundle exec jekyll build --destination _site`
   4. `actions/upload-pages-artifact@v3` → `path: ./_site`
   5. `actions/deploy-pages@v4`
 
@@ -366,4 +369,4 @@ var YM_ID = 0;  // Вставить номер Яндекс.Метрики
 ---
 
 *Документ создан для обеспечения консистентности при работе с проектом различными AI-агентами.*
-*Миграция на Jekyll завершена: 2026-11-13*
+*Миграция на Jekyll завершена: 2026-11-13 | Последняя статья блога: 2026-11-15*
