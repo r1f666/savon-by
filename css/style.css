@@ -98,6 +98,25 @@ p{margin:0 0 1em}
 /* About */
 .about p{max-width:38em;font-size:1.1rem}
 
+/* Hero image */
+.hero__img{width:100%;height:auto;display:block;border-radius:var(--r);object-fit:cover}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero__grid{grid-template-columns:1fr;gap:32px}
+  .hero__img{max-width:480px;margin-inline:auto}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .perks__list{grid-template-columns:1fr}
+  .perks__list li{padding-left:0;border-left:0}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .nav{display:none}
+}
+@media(max-width:620px){
+  .grid{grid-template-columns:1fr}
+  .hero__img{max-width:100%}
+  .steps{grid-template-columns:1fr}
+}
+
 /* Reviews */
 .quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .quotes figure{margin:0;padding:28px;background:#fff;border-radius:var(--r);border-left:6px solid var(--honey)}

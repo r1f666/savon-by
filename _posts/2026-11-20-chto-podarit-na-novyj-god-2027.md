@@ -11,6 +11,8 @@ permalink: /blog/chto-podarit-na-novyj-god-2027/
 
 Но есть категория подарков, которая попадает сразу в две точки: и «уютное», и «с душой». Это мыло и бомбочки ручной работы. Они не пылятся на полке, не требуют угадывать размер или вкус, и при этом каждый раз, когда человек ими пользуется, он вспоминает того, кто подарил.
 
+<img src="/img/hero/new-year-hero.webp" srcset="/img/hero/new-year-hero.webp 2030w" sizes="(max-width: 620px) 100vw, 100vw" width="2030" height="1868" alt="Новогодний набор из натурального мыла ручной работы" loading="eager" decoding="async" style="width:100%;height:auto;display:block;border-radius:var(--r);margin:24px 0;">
+
 Собрали семь идей — от простых до тех, что запомнятся надолго.
 
 ## Содержание
