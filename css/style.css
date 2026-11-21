@@ -99,12 +99,12 @@ p{margin:0 0 1em}
 .about p{max-width:38em;font-size:1.1rem}
 
 /* Hero image */
-.hero__img{width:100%;height:auto;display:block;border-radius:var(--r);object-fit:cover}
+.hero__img{width:auto;height:554px;display:block;border-radius:var(--r);object-fit:contain}
 
 /* Responsive */
 @media(max-width:900px){
   .hero__grid{grid-template-columns:1fr;gap:32px}
-  .hero__img{max-width:480px;margin-inline:auto}
+  .hero__img{width:100%;height:auto;max-width:100%}
   .grid{grid-template-columns:repeat(2,1fr)}
   .perks__list{grid-template-columns:1fr}
   .perks__list li{padding-left:0;border-left:0}
@@ -113,7 +113,6 @@ p{margin:0 0 1em}
 }
 @media(max-width:620px){
   .grid{grid-template-columns:1fr}
-  .hero__img{max-width:100%}
   .steps{grid-template-columns:1fr}
 }
 
